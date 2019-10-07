@@ -32,23 +32,26 @@ void Client::afficher()
 
 			cout << "Quel est votre code\n"; //afficher quel est votre code
 			cin >> input;
-			nb_essai++; // décrementer le nbre d'essai
-	}while (input != pass); // Tant que le code n'est pas le mdp
+			nb_essai++; // decrementer le nbre d'essai
+
+	}while (input != pass && nb_essai<3 ); // Tant que le code n'est pas le mdp
 		
 		
-	 if (input != pass && nb_essai>3) //si le nbre d'essai est à 0
+	 if (nb_essai=3 && input != pass ) //si le nbre d'essai est = 0
 		{
-			cout << "mdp erronee\n"; //afficher ce msg
+			cout << " Votre compte est bloquÃ©e, veuillez contacter un conseiller \n"; //afficher ce msg
 		}
 	
 
-		else if (input = pass) //sinon si le code est le mdp 
+		else if ( input == pass) //sinon si le code est le mdp 
 		{
 
-			cout << "voici les coordonnes de votre compte\n Votre numero CNI :\t" << m_numeroCNI << endl;
-			cout << " Nom : \t" << m_nom << endl;
-			cout << " Prenom :\t" << m_prenom << endl;
-			cout << " Numero de telephone :\t" << m_numerotel << endl;
+			cout << " \n Voici les coordonnes de votre compte :\t" << endl; 
+
+			cout << " \n Votre numero CNI \t:" << m_numeroCNI << endl;
+			cout << " Nom \t\t\t:" << m_nom << endl;
+			cout << " Prenom \t\t:" << m_prenom << endl;
+			cout << " Numero de telephone \t:" << m_numerotel << endl;
 
 		}
 }

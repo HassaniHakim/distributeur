@@ -10,15 +10,54 @@ using namespace std;
 int pass=75017;
 int input;
 int nb_essai= 3;
+int choix;
+int somme;
+int argentDeposer = 0 ;
+int argentRetirer = 0 ;
 
 
 int main()
 {
-	Client A{ 100,"hassani","hakim",06 }; //Création d'objet de type client 
+	/* Affichage des informations du client*/
 
-	{
+	Client A{ 100,"hassani","hakim", 062 }; //Création d'objet de type client 
+
 		A.afficher(); //on affiche le client A
+		
+	
+	/* Affichage du menu */
+
+	Compte Epargne{100,0 };
+
+	
+
+	cout << "\t\t===========================<<<<<<<<<<< BANQUE SN2 >>>>>>>>>>>==========================\n\n"<<endl;
+ 	cout << "\t\t                                                                                \n"<<endl;
+ 	cout << "\t\t  [1] : ==========<<<<<<<  Déposer de l'argent             >>>>>>========       \n"<<endl;
+ 	cout << "\t\t  [2] : ==========<<<<<<<  Retirer de l'argent             >>>>>>========       \n"<<endl;
+	cout << "\t\t                                                                                \n"<<endl;
+	cout << "\t\t===========================<<<<<<<<<<< BANQUE SN2 >>>>>>>>>>>==========================\n\n"<<endl;
+	
+	cout << " Quelle transaction désiez-vous effectuer ?"<< endl;
+	cin >> choix;
+
+	switch(choix)
+	{
+		case 1: 
+			cout << "combien voulez-vous deposer ?"<< endl;
+			cin >> argentDeposer;
+			Epargne.crediterCompte(argentDeposer);
+			break;
+
+		case 2:
+			cout << "Combien voulez-vous retirez ?" << endl;
+			cin >> argentRetirer;
+			Epargne.debiterCompte(argentRetirer);
+
+
+	
 	}
+	
 
 	return 0;
 }
